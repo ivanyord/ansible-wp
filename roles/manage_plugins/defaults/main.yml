@@ -1,0 +1,7 @@
+---
+plg_install: "{{ plugin_install | default(false) }}"
+plg_activate: "{{ plugin_activate | default(false) }}"
+plg_deactivate: "{{ plugin_deactivate | default(false) }}"
+plg_delete: "{{ plugin_delete | default(false) }}"
+plg_update: "{{ plugin_update | default(false) }}"
+plg_find: "{{ plugin_find | default(false) }}"

@@ -1,0 +1,36 @@
+---
+- name: Clone the Memcached Redux repo
+  git:
+    repo: "{{ memcached_git_url }}"
+    dest: tmp/
+    clone: yes
+    recursive: yes
+    version: master
+  delegate_to: localhost
+  run_once: true
+
+- name: Copy the object-cache.php files to the remote hosts
+  synchronize:  
+    src: "tmp/object-cache.php"
+    dest: "{{ wpdir }}/wp-content/"
+
+- name: Fix object-cache.php permissions and ownership
+  file:
+    path: "{{ wpdir }}/wp-content/object-cache.php"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Set correct host for Memcached connection
+  replace:
+    path: "{{ wpdir }}/wp-content/object-cache.php"
+    regexp: "127.0.0.1"
+    replace: "{{ memcached_host }}"
+  when: memcached_host  != '127.0.0.1'
+
+- name: Set correct port for Memcached connection
+  replace:
+    path: "{{ wpdir }}/wp-content/object-cache.php"
+    regexp: "11211"
+    replace: "{{ memcached_port }}"
+  when: memcached_port != '11211'

@@ -1,0 +1,7 @@
+---
+- name: Create database
+  hosts: all
+  serial: "100%"
+  remote_user: root
+  tasks:
+    - include: roles/manage_mysql/create_db_user.yml

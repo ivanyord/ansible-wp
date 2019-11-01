@@ -1,0 +1,2 @@
+- name: Activating plugin "{{ plugin_name }}"
+  command: "/usr/local/bin/wp --path={{ wpdir }} plugin activate {{ plugin_name }} --allow-root"

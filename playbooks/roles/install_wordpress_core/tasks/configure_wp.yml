@@ -1,0 +1,6 @@
+---
+- name: Configure WordPress using the DB details from the inventory
+  command: "/usr/local/bin/wp core config --path={{ wp_dir }} --dbname='{{ db_name }}' --dbuser='{{ db_user }}' --dbpass='{{ db_pass }}' --dbhost='localhost' --dbprefix='wp_' --allow-root"
+
+- name: Install WordPress
+  command: "/usr/local/bin/wp core install --path={{ wp_dir }} --url='someurl.com' --title='Hello World' --admin_user='random_admin_name' --admin_password='random_p@ss' --admin_email='me@ivan-yordanov.com' --allow-root"

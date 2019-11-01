@@ -1,0 +1,7 @@
+---
+- name: Install and configure  Memcached plugin 
+  hosts: all
+  serial: "100%"
+  remote_user: root
+  roles:
+    - install_memcached_plugin

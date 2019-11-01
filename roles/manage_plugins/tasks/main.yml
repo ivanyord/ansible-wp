@@ -1,0 +1,21 @@
+---
+- debug:
+    msg: "plg_install = {{ plg_install }} plg_activate = {{ plg_activate }} plg_deactivate = {{ plg_deactivate }} plg_delete = {{ plg_delete }} plg_find = {{ plg_find }}"
+
+- include_tasks: find_plugin.yml plugin_name="{{ plg_find_name }}"
+  when: plg_find
+
+- include_tasks: install_plugin.yml plugin_name="{{ plg_install_name }}"
+  when: plg_install
+
+- include_tasks: activate_plugin.yml plugin_name="{{ plg_install_name }}"
+  when: plg_activate
+
+- include_tasks: deactivate_plugin.yml plugin_name="{{ plg_install_name }}"
+  when: plg_deactivate
+
+- include_tasks: delete_plugin.yml plugin_name="{{ plg_install_name }}"
+  when: plg_delete
+
+- include_tasks: update_plugin.yml plugin_name="{{ plg_update_name }}"
+  when: plg_update

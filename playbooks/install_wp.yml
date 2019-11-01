@@ -1,0 +1,18 @@
+---
+- name: Install WordPress Core
+  hosts: all
+  serial: "100%"
+  remote_user: root
+  roles:
+    - install_wordpress_core
+  tasks:
+    - include: roles/manage_mysql/create_db.yml 
+    - include: roles/manage_mysql/create_db_user.yml
+    - include: roles/install_wordpress_core/tasks/configure_wp.yml
+
+- name: Install install initial plugins
+  hosts: all
+  serial: "100%"
+  remote_user: root
+  roles:
+    - { role: manage_plugins, plg_install: true, plg_install_name: 'booking card-block ml-slider  block-profile-card' }

@@ -1,0 +1,2 @@
+- name: Deactivating plugin "{{ plugin_name }}"
+  command: "/usr/local/bin/wp --path={{ wpdir }} plugin deactivate {{ plugin_name }} --allow-root"

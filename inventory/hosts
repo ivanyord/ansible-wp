@@ -1,0 +1,11 @@
+[project1]
+project4 ansible_port=22 ansible_host=IP.IP.IP.IP db_user=db_user_name db_name=db_name db_pass="xxx" wpdir="/path/where/out/wp/will/be/located" memcached_host=IP.IP.IP.IP memcached_port=0000
+
+[project2]
+project4 ansible_port=22 ansible_host=IP.IP.IP.IP db_user=db_user_name db_name=db_name db_pass="xxx" wpdir="/path/where/out/wp/will/be/located" memcached_host=IP.IP.IP.IP memcached_port=0000
+
+[project3]
+project4 ansible_port=22 ansible_host=IP.IP.IP.IP db_user=db_user_name db_name=db_name db_pass="xxx" wpdir="/path/where/out/wp/will/be/located" memcached_host=IP.IP.IP.IP memcached_port=0000
+
+[priject4]
+project4.com ansible_port=22 ansible_host=IP.IP.IP.IP db_user=db_user_name db_name=db_name db_pass="xxx" wpdir="/path/where/out/wp/will/be/located" memcached_host=IP.IP.IP.IP memcached_port=0000

@@ -1,0 +1,7 @@
+---
+- name: Install install initial plugins
+  hosts: all
+  serial: "100%"
+  remote_user: root
+  roles:
+    - { role: manage_plugins, plg_install: true }

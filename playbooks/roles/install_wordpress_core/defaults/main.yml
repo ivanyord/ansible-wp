@@ -1,0 +1,5 @@
+---
+wordpress_dl_url: "https://wordpress.org/latest.zip"
+wp_dir: "{{ dir }}"
+owner_user: "{{ owner }}"
+owner_group: "{{ group }}"

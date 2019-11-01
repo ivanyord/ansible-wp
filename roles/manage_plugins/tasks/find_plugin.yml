@@ -1,0 +1,3 @@
+---
+- name: Checking if plugin {{ plugin_name }} is present
+  command: "/usr/local/bin/wp --path={{ wpdir }} plugin is-installed {{ plugin_name }} --allow-root"

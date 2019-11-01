@@ -1,0 +1,12 @@
+---
+- name: Ensure WordPress destination dir is present
+  file:
+    path: "{{ wp_dir }}"
+    state: directory
+    recurse: yes
+    owner: "{{ owner_user }}"
+    group: "{{ owner_group }}"
+
+- name: Download and extract WordPress core
+  command: "/usr/local/bin/wp core download --path={{ wp_dir }} --allow-root"
+  ignore_errors: yes
