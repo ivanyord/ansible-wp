@@ -25,10 +25,15 @@ The playbooks folder contains the actual playbooks that will be executed. An exa
 The plugins.yml playbook is calling the manage_plugins role. --extra-vars need to be passed in oredr to identify what exactly you'd like the playbook to do. The vars are boolean and are:
 
 plg_install
+
 plg_activate
+
 plg_deactivate
+
 plg_delete
+
 plg_update
+
 plg_find
 
 and plugin_name should be specified. 
