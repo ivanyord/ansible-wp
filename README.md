@@ -19,3 +19,21 @@ The roles folder contains all of the roles created so far which will be used in 
 The playbooks folder contains the actual playbooks that will be executed. An example of how an execution is triggered:
 
  ansible-playbook -c ssh -D -i $inventory_hosts $playbook_name.yml
+ 
+ ### plugins.yml
+ 
+The plugins.yml playbook is calling the manage_plugins role. --extra-vars need to be passed in oredr to identify what exactly you'd like the playbook to do. The vars are boolean and are:
+
+plg_install
+plg_activate
+plg_deactivate
+plg_delete
+plg_update
+plg_find
+
+and plugin_name should be specified. 
+
+So for example if you want to install the plugin 'random-plugin-name' your playbook should be invoke like that:
+
+ansible-playbook -c ssh -D -i $inventory_hosts plugins.yml --extra-vars "plg_install=true plugin_name=random-plugin-name"
+ 
